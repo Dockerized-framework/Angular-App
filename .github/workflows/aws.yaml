@@ -4,7 +4,7 @@ on:
  
   push:
     branches:
-      - aws-ecr
+      - aws-ecr-tag
 
 jobs:
   
