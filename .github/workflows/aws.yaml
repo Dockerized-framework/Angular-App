@@ -80,4 +80,4 @@ jobs:
         args: | 
           apply manifest/deployment.yaml
           apply manifest/service.yaml
-          aplly manifest/ingress.yaml
+          apply manifest/ingress.yaml
