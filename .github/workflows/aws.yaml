@@ -10,7 +10,7 @@ jobs:
   
   build:
     
-    name: Build Image
+    name: Build and Release Pipeline
     runs-on: ubuntu-latest
 
    
@@ -47,7 +47,7 @@ jobs:
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG1"
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG2"
   
-    - name: Deploy
+    - name: Deploy to CLUSTER
       uses: cancue/eks-action@v0.0.2
       env:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -60,7 +60,7 @@ jobs:
           kubectl -n pipeline apply -f manifest/service.yaml
           kubectl -n pipeline apply -f manifest/ingress.yaml
     
-    - name: Build and push CONTAINER_NAME
+    - name: Restart Deployed CONTAINER
       uses: ianbelcher/eks-kubectl-action@master
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
