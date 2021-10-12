@@ -53,4 +53,5 @@ jobs:
       with:
         args: |
           kubectl apply -f manifest/deployment.yaml -n pipeline
-          kubectl rollout deployment restart test-pipeline -n pipeline
+          kubectl apply -f deployment.yaml -n pipeline
+          kubectl rollout restart deployment test-pipeline -n pipeline
