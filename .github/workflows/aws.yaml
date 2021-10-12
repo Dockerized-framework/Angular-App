@@ -77,7 +77,5 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: get pods
-    - run: |
-          kubectl -n pipeline -f manifest/deployment.yaml 
+        args: apply -f /manifest/deployment.yaml
         
