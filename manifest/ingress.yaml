@@ -5,7 +5,7 @@ metadata:
   name: test-pipeline-ingress
   namespace: pipeline
   annotations:
-    kubernetes.io/ingress.class: alb
+    kubernetes.io/ingress.class: nginx
 #      kubernetes.io/ingress.class: nginx
 #     nginx.ingress.kubernetes.io/use-regex: "true"
 #     nginx.ingress.kubernetes.io/rewrite-target: /$2
