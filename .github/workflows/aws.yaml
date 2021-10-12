@@ -59,5 +59,10 @@ jobs:
           kubectl -n pipeline apply -f manifest/deployment.yaml
           kubectl -n pipeline apply -f manifest/service.yaml
           kubectl -n pipeline apply -f manifest/ingress.yaml
-    - run: |  
-        kubectl -n pipeline rollout restart deploy/test-pipeline
+    
+    - name: verify deployment
+      uses: kodermax/kubectl-aws-eks@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      with:
+        args: rollout restart deployment/test-pipeline
