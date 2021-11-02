@@ -36,3 +36,7 @@ https://medium.com/@damitj07/how-to-configure-and-use-aws-ecr-with-kubernetes-ra
 https://learnk8s.io/kubernetes-rollbacks 
 
 
+# ekctl add nodegroup 
+
+eksctl create nodegroup --cluster=robin-personal-cluster --name=ng3 --region us-east-2 --instance-types=t2.micro
+
