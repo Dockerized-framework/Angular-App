@@ -72,6 +72,7 @@
           "configurations": {
             "production": {
               "browserTarget": "AngularApp:build:production"
+              "port": 4200
             },
             "development": {
               "browserTarget": "AngularApp:build:development"
