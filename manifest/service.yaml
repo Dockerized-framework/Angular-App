@@ -5,7 +5,9 @@ metadata:
   namespace: pipeline
 spec:
   ports:
-  - port: 4200
+  - nodePort: 30754
+    port: 4200
     targetPort: 4200
   selector:
     app: test-pipeline
+  type: NodePort
